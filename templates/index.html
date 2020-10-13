@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Papy Robot </title>
+    <script src="static/js/script.js"></script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC42UqAekJzZurXayShCHcHKG6WZXVuvBk&callback=initMap">
+        </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <header class="main-header clearfix">
+            <div class="header">
+                <div class="img_header"> <img src="{{ url_for('static', filename='css/img/grandpa.jpg') }}"></div>
+                <h1> Vous souhaitez découvrir une histoire en lien avec un endroit ? Vous êtes au bon endroit !</h1>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li> <a href="https://www.udemy.com"> Home </a></li>
+                    <li> <a href="https://www.google.com"> App </a></li>
+                    <li> <a href="https://www.youtube.com"> About Us </a></li>
+                    <li> <a href="https://www.yahoo.com"> Contact </a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <h2> Choisir un lieu </h2>
+        <p> Entrez une adresse ici </p>
+        <form class="form-inline" method="POST" action="/">
+            adresse: <br>
+            <input type="text" name="adress"> <br>
+            <input type="text" name="story"> <br>
+            <button type="submit" class="btn btn-info" value="submit"> Submit </button>
+        </form>
+    </div>
+
+
+    <div id="map">
+
+    </div>
+    <div class="container">
+        {% if adress == "rennes" %}
+
+        <p> this city is wonderful </p>
+        {% elif adress == "paris" %}
+        <p> I like Paris </p>
+        {% else %}
+        <p> Please write another place </p>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <footer>
+            <p> Nom : MAHAMOUD <br> Prenom : Taha </p>
+            <p> Voici un lien vers mon github : <a href="https://github.com/taha891"> LINK </a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
