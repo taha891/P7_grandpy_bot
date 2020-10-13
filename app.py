@@ -1,8 +1,9 @@
+import json
 from flask import Flask
 from flask import render_template, jsonify
 from flask import request
 from config import API_KEY, API_URL
-import json
+
 
 app = Flask(__name__)
 
